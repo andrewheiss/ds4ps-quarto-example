@@ -33,3 +33,4 @@ interactive_plot <- gapminder %>%
 
 girafe(ggobj = interactive_plot)
 ```
+

@@ -3,3 +3,4 @@ title: "Example DS4PS course website"
 ---
 
 This is a course website built with [Quarto](https://quarto.org/).
+
