@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "r-stuff.html",
+    "href": "r-stuff.html",
+    "title": "R stuff",
+    "section": "",
+    "text": "Here’s a static plot:\n\nlibrary(tidyverse)\nlibrary(gapminder)\n\nregular_plot <- gapminder %>% \n  filter(year == 2007) %>% \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point() +\n  scale_x_log10()\nregular_plot"
+  },
+  {
+    "objectID": "r-stuff.html#interactive-plot",
+    "href": "r-stuff.html#interactive-plot",
+    "title": "R stuff",
+    "section": "Interactive plot",
+    "text": "Interactive plot\nHere’s an interactive version using ggiraph\n\nlibrary(ggiraph)\n\ninteractive_plot <- gapminder %>% \n  filter(year == 2007) %>% \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point_interactive(aes(tooltip = country)) +\n  scale_x_log10()\n\ngirafe(ggobj = interactive_plot)"
+  },
+  {
+    "objectID": "python-stuff.html",
+    "href": "python-stuff.html",
+    "title": "Python stuff",
+    "section": "",
+    "text": "import numpy as np\na = np.arange(15).reshape(3, 5)\na\n\narray([[ 0,  1,  2,  3,  4],\n       [ 5,  6,  7,  8,  9],\n       [10, 11, 12, 13, 14]])"
+  },
+  {
+    "objectID": "python-stuff.html#matplotlib",
+    "href": "python-stuff.html#matplotlib",
+    "title": "Python stuff",
+    "section": "Matplotlib",
+    "text": "Matplotlib\n\nimport matplotlib.pyplot as plt\n\nfig = plt.figure()\nx = np.arange(10)\ny = 2.5 * np.sin(x / 20 * np.pi)\nyerr = np.linspace(0.05, 0.2, 10)\n\nplt.errorbar(x, y + 3, yerr=yerr, label='both limits (default)')\nplt.errorbar(x, y + 2, yerr=yerr, uplims=True, label='uplims=True')\nplt.errorbar(x, y + 1, yerr=yerr, uplims=True, lolims=True,\n             label='uplims=True, lolims=True')\n\nupperlimits = [True, False] * 5\nlowerlimits = [False, True] * 5\nplt.errorbar(x, y, yerr=yerr, uplims=upperlimits, lolims=lowerlimits,\n             label='subsets of uplims and lolims')\n\nplt.legend(loc='lower right')\nplt.show(fig)"
+  },
+  {
+    "objectID": "python-stuff.html#plotly",
+    "href": "python-stuff.html#plotly",
+    "title": "Python stuff",
+    "section": "Plotly",
+    "text": "Plotly\n\nimport plotly.express as px\nimport plotly.io as pio\ngapminder = px.data.gapminder()\ngapminder2007 = gapminder.query(\"year == 2007\")\nfig = px.scatter(gapminder2007, \n                 x=\"gdpPercap\", y=\"lifeExp\", color=\"continent\", \n                 size=\"pop\", size_max=60,\n                 hover_name=\"country\")\nfig.show()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Example DS4PS course website",
+    "section": "",
+    "text": "This is a course website built with Quarto."
+  }
+]
