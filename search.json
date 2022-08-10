@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "r-stuff.html",
-    "href": "r-stuff.html",
-    "title": "R stuff",
-    "section": "",
-    "text": "Here’s a static plot:\n\nlibrary(tidyverse)\nlibrary(gapminder)\n\nregular_plot <- gapminder %>% \n  filter(year == 2007) %>% \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point() +\n  scale_x_log10()\nregular_plot"
-  },
-  {
-    "objectID": "r-stuff.html#interactive-plot",
-    "href": "r-stuff.html#interactive-plot",
-    "title": "R stuff",
-    "section": "Interactive plot",
-    "text": "Interactive plot\nHere’s an interactive version using ggiraph\n\nlibrary(ggiraph)\n\ninteractive_plot <- gapminder %>% \n  filter(year == 2007) %>% \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point_interactive(aes(tooltip = country)) +\n  scale_x_log10()\n\ngirafe(ggobj = interactive_plot)"
-  },
-  {
     "objectID": "python-stuff.html",
     "href": "python-stuff.html",
     "title": "Python stuff",
@@ -40,5 +26,19 @@
     "title": "Example DS4PS course website",
     "section": "",
     "text": "This is a course website built with Quarto."
+  },
+  {
+    "objectID": "r-stuff.html",
+    "href": "r-stuff.html",
+    "title": "R stuff",
+    "section": "",
+    "text": "Here’s a static plot:\n\nlibrary(tidyverse)\nlibrary(gapminder)\n\nregular_plot <- gapminder %>% \n  filter(year == 2007) %>% \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point() +\n  scale_x_log10()\nregular_plot"
+  },
+  {
+    "objectID": "r-stuff.html#interactive-plot",
+    "href": "r-stuff.html#interactive-plot",
+    "title": "R stuff",
+    "section": "Interactive plot",
+    "text": "Interactive plot\nHere’s an interactive version using ggiraph\n\nlibrary(ggiraph)\n\ninteractive_plot <- gapminder %>% \n  filter(year == 2007) %>% \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point_interactive(aes(tooltip = country)) +\n  scale_x_log10()\n\ngirafe(ggobj = interactive_plot)"
   }
 ]
