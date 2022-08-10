@@ -6,18 +6,24 @@ execute:
 
 website:
   title: "Some DS4PS class"
+
+  repo-url: "https://github.com/andrewheiss/ds4ps-quarto-example"
+  repo-actions: [edit, issue]
+
   navbar:
+    pinned: true
     left:
       - href: index.qmd
         text: Home
       - r-stuff.qmd
       - python-stuff.qmd
+    right:
+      - icon: github
+        href: "https://github.com/andrewheiss/ds4ps-quarto-example"
+        aria-label: GitHub
 
 format:
   html:
     theme: zephyr
     css: styles.css
     toc: true
-
-
-
