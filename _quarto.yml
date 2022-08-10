@@ -1,0 +1,20 @@
+project:
+  type: website
+
+website:
+  title: "Some DS4PS class"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - r-stuff.qmd
+      - python-stuff.qmd
+
+format:
+  html:
+    theme: zephyr
+    css: styles.css
+    toc: true
+
+
+

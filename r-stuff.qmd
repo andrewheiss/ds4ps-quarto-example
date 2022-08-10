@@ -1,0 +1,35 @@
+---
+title: "R stuff"
+---
+
+## Health and wealth
+
+Here's a static plot:
+
+```{r warning=FALSE, message=FALSE}
+library(tidyverse)
+library(gapminder)
+
+regular_plot <- gapminder %>% 
+  filter(year == 2007) %>% 
+  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_point() +
+  scale_x_log10()
+regular_plot
+```
+
+## Interactive plot
+
+Here's an interactive version using **ggiraph**
+
+```{r warning=FALSE, message=FALSE}
+library(ggiraph)
+
+interactive_plot <- gapminder %>% 
+  filter(year == 2007) %>% 
+  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_point_interactive(aes(tooltip = country)) +
+  scale_x_log10()
+
+girafe(ggobj = interactive_plot)
+```
